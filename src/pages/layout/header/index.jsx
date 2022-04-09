@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
@@ -11,6 +11,11 @@ function HeaderNav() {
   const { configStore } = useStore();
   const [locales, setLocales] = useState(['zh_CN']);
   const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem('locale')) {
+      setLocales([localStorage.getItem('locale')]);
+    }
+  }, []);
   const handleSelect = ({ key }) => {
     if (locales[0] !== key) {
       setLocales([key]);

@@ -6,11 +6,10 @@ class ConfigStore {
     makeAutoObservable(this);
   }
 
-  locale = 'zh_CN'; // 默认中文
-  themeStyle = 'dark'; // 整体风格
+  locale = localStorage.getItem('locale') ? localStorage.getItem('locale') : 'zh_CN'; // 默认中文
+  themeStyle = localStorage.getItem('themeStyle') ? localStorage.getItem('themeStyle') : 'dark'; // 整体风格
   theme = {
-    // primaryColor: '#25b864', // 主色调
-    primaryColor: '#1890FF',
+    primaryColor: localStorage.getItem('primaryColor') ? localStorage.getItem('primaryColor') : '#1890FF',
     errorColor: '#ff4d4f',
     warningColor: '#faad14',
     successColor: '#52c41a',
@@ -20,16 +19,19 @@ class ConfigStore {
   // 语言切换
   switchLanguage = (lang) => {
     this.locale = lang;
+    localStorage.setItem('locale', lang);
   };
 
   // 切换风格
   switchStyle = (style) => {
     this.themeStyle = style;
+    localStorage.setItem('themeStyle', style);
   };
 
   // 切换主题色
   switchColor = (color) => {
     this.theme.primaryColor = color;
+    localStorage.setItem('primaryColor', color);
   };
 }
 
