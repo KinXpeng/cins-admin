@@ -10,6 +10,14 @@ const zh_CN = {
     diary_list: '日记列表',
     moment_status: '时刻状态',
   },
+  login: {
+    remember: '记住密码',
+    login: '登录',
+    username: '用户名',
+    password: '密码',
+    username_check: '请输入用户名',
+    password_check: '请输入密码',
+  },
 };
 
 export default zh_CN;

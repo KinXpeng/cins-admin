@@ -10,6 +10,14 @@ const en_US = {
     diary_list: 'Diary List',
     moment_status: 'Moment Status',
   },
+  login: {
+    remember: 'Remember me',
+    login: 'Login',
+    username: 'Username',
+    password: 'Password',
+    username_check: 'Please input your Username!',
+    password_check: 'Please input your Password!',
+  },
 };
 
 export default en_US;
