@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx';
+import i18n from 'i18next';
 
 // 全局配置
 class ConfigStore {
@@ -20,6 +21,7 @@ class ConfigStore {
   switchLanguage = (lang) => {
     this.locale = lang;
     localStorage.setItem('locale', lang);
+    i18n.changeLanguage(lang === 'zh_CN' ? 'zh' : 'en');
   };
 
   // 切换风格

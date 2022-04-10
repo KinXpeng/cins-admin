@@ -5,5 +5,7 @@ import App from './App';
 import 'antd/dist/antd.variable.min.css';
 // 引入全局样式文件
 import './index.scss';
+// 引入国际化
+import './i18n/i18n';
 
 createRoot(document.getElementById('root')).render(<App />);

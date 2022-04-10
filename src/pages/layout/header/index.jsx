@@ -4,11 +4,12 @@ import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
 import { Menu, Dropdown, Tooltip, Drawer } from 'antd';
 import { GlobalOutlined, SettingOutlined, CheckOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
-
 function HeaderNav() {
   const { configStore } = useStore();
+  const { t } = useTranslation();
   const [locales, setLocales] = useState(['zh_CN']);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -108,7 +109,7 @@ function HeaderNav() {
       <Drawer width="280" className={styles.setting_drawer} placement="right" visible={visible} onClose={() => setVisible(false)} closable={false}>
         {/* 主题style */}
         <div className={styles.panel_style}>
-          <h3 className={styles.title}>整体风格设置</h3>
+          <h3 className={styles.title}>{t('header.page_style')}</h3>
           <div className={styles.diffstyles}>
             {themeList.map((item) => (
               <span key={item.style} onClick={() => configStore.switchStyle(item.style)}>
@@ -123,7 +124,7 @@ function HeaderNav() {
 
         {/* 主题色 */}
         <div className={styles.theme_color}>
-          <h3 className={styles.title}>主题色</h3>
+          <h3 className={styles.title}>{t('header.theme_color')}</h3>
           <div className={styles.colors}>
             {colorList.map((item) => (
               <Tooltip title={item[configStore.locale + '_name']} color={item.color + 'B3'} key={item.color}>
