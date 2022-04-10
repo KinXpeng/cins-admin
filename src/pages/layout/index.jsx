@@ -19,7 +19,7 @@ function LayoutConfig() {
   return (
     <Layout className={styles.layout}>
       <Sider width="230" theme={configStore.themeStyle} trigger={null} collapsible collapsed={collapsed} className={styles.aside}>
-        <SiderMenu />
+        <SiderMenu collapsed={collapsed} />
       </Sider>
       <Layout className={styles['site-layout']}>
         <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0 }}>

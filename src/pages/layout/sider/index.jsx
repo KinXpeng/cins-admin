@@ -8,12 +8,12 @@ import styles from './index.module.scss';
 
 const { SubMenu } = Menu;
 
-function SiderMenu() {
+function SiderMenu({ collapsed }) {
   const { configStore } = useStore();
   const { t } = useTranslation();
   return (
     <>
-      <div className={styles.logo}>logo</div>
+      <div className={styles.logo}>{collapsed ? 'L' : 'logo'}</div>
       <Menu theme={configStore.themeStyle} mode="inline" defaultSelectedKeys={['sub1']}>
         <SubMenu key="sub1" icon={<TeamOutlined />} title={t('aside.user_list')}>
           <Menu.Item key="1">Option 1</Menu.Item>
