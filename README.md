@@ -2,6 +2,25 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project introduction
+
+- 项目是基于 `create-react-app` 脚手架搭建的后台管理系统（react18版本），所有页面及功能采用函数式组件及hooks实现。
+- 所用技术/UI框架
+  - 脚手架：`create-react-app`
+  - 路由（v6版本）：`react-router-dom`  
+  - 全局状态共享：`mobx` `mobx-react-lite`
+  - CSS处理（css Modules）：`sass`
+  - UI框架：`antd`
+  - 配置别名（配置@路径简化路径处理）：`@craco/craco`
+  - 国际化：`i18next` `react-i18next`
+  - 数据请求：`axios`
+- 功能实现：（界面设计参照了antd-pro的风格）
+  - 界面风格切换：暗色风格和亮色风格两种。
+  - 主题色切换：antd-pro的8种主题色。
+  - 国际化：使用 `i18n` 实现国际化，当前支持中英文两种语言的切换。
+  - 路由鉴权：封装Auth组件，实现登录拦截。
+  - token持久化：封装工具函数使用本地储存实现token持久化。
+
 ## Available Scripts
 
 In the project directory, you can run:
