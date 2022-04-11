@@ -17,6 +17,7 @@ const zh_CN = {
     password: '密码',
     username_check: '请输入用户名',
     password_check: '请输入密码',
+    success: '登录成功！',
   },
 };
 

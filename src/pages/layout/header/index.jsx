@@ -3,15 +3,17 @@ import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
 import { Menu, Dropdown, Tooltip, Drawer } from 'antd';
-import { GlobalOutlined, SettingOutlined, CheckOutlined } from '@ant-design/icons';
+import { GlobalOutlined, SettingOutlined, CheckOutlined, UserOutlined, ImportOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 function HeaderNav() {
   const { configStore, loginStore } = useStore();
   const { t } = useTranslation();
-  const [locales, setLocales] = useState(['zh_CN']);
-  const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+  const [locales, setLocales] = useState(['zh_CN']); // 默认中文环境
+  const [visible, setVisible] = useState(false); // 设置面板显示状态
   useEffect(() => {
     if (localStorage.getItem('locale')) {
       setLocales([localStorage.getItem('locale')]);
@@ -83,10 +85,28 @@ function HeaderNav() {
     },
   ];
 
-  const menu = (
+  // 退出登录
+  const handleUserLogout = ({ key }) => {
+    if (key === 'logout') {
+      loginStore.logout();
+      navigate('/login', { replace: true });
+    }
+  };
+
+  // 国际化菜单
+  const languageMenu = (
     <Menu onClick={handleSelect} selectedKeys={locales}>
       <Menu.Item key="zh_CN">🇨🇳 简体中文</Menu.Item>
       <Menu.Item key="en_US">🇬🇧 English</Menu.Item>
+    </Menu>
+  );
+
+  // 用户下拉设置
+  const userMenu = (
+    <Menu onClick={handleUserLogout}>
+      <Menu.Item key="logout">
+        <ImportOutlined /> 退出登录
+      </Menu.Item>
     </Menu>
   );
   return (
@@ -97,15 +117,18 @@ function HeaderNav() {
       </div>
 
       {/* 国际化 */}
-      <Dropdown overlay={menu} placement="bottomRight">
+      <Dropdown overlay={languageMenu} placement="bottomRight">
         <div className={styles.locales}>
           <GlobalOutlined />
         </div>
       </Dropdown>
 
-      <div className={styles.user} onClick={loginStore.logout}>
-        username
-      </div>
+      {/* 用户信息  */}
+      <Dropdown overlay={userMenu} placement="bottomRight">
+        <div className={styles.user}>
+          <UserOutlined /> admin
+        </div>
+      </Dropdown>
 
       {/* 设置面板 */}
       <Drawer width="280" className={styles.setting_drawer} placement="right" visible={visible} onClose={() => setVisible(false)} closable={false}>

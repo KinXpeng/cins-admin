@@ -17,6 +17,7 @@ const en_US = {
     password: 'Password',
     username_check: 'Please input your Username!',
     password_check: 'Please input your Password!',
+    success: 'Login Success!',
   },
 };
 
