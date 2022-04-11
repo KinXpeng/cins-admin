@@ -18,8 +18,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - 界面风格切换：暗色风格和亮色风格两种。
   - 主题色切换：antd-pro的8种主题色。
   - 国际化：使用 `i18n` 实现国际化，当前支持中英文两种语言的切换。
-  - 路由鉴权：封装Auth组件，实现登录拦截。
+  - 配置式路由：基于`react-router-dom`实现了和`vue`类似的单独可配置的router，进行统一的管理。
+  - 路由鉴权：封装Auth高阶组件，实现登录拦截。
+  - axios封装：基于`axios`统一处理，实现请求以及响应拦截，全局接口统一管理。
   - token持久化：封装工具函数使用本地储存实现token持久化。
+  - mobx状态管理：以`mobx-react-lite` 作为链接包，实现数据响应式；按功能拆分store，实现mobx的模块化。
 
 ## Available Scripts
 
