@@ -1,8 +1,10 @@
 import React from 'react';
 import ConfigStore from './config.Store';
+import LoginStore from './login.Store';
 class RootStore {
   constructor() {
     this.configStore = new ConfigStore();
+    this.loginStore = new LoginStore();
   }
 }
 

@@ -2,13 +2,17 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useStore } from '@/store/index';
+import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
 
 function Login() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const { loginStore } = useStore();
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
+    loginStore.login();
     navigate('/', { replace: true });
   };
   return (
@@ -58,4 +62,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default observer(Login);

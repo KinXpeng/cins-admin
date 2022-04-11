@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 function HeaderNav() {
-  const { configStore } = useStore();
+  const { configStore, loginStore } = useStore();
   const { t } = useTranslation();
   const [locales, setLocales] = useState(['zh_CN']);
   const [visible, setVisible] = useState(false);
@@ -103,7 +103,9 @@ function HeaderNav() {
         </div>
       </Dropdown>
 
-      <div className={styles.user}>username</div>
+      <div className={styles.user} onClick={loginStore.logout}>
+        username
+      </div>
 
       {/* 设置面板 */}
       <Drawer width="280" className={styles.setting_drawer} placement="right" visible={visible} onClose={() => setVisible(false)} closable={false}>
