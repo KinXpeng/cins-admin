@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
-import { Menu, Dropdown, Tooltip, Drawer } from 'antd';
+import { Breadcrumb, Menu, Dropdown, Tooltip, Drawer } from 'antd';
 import { GlobalOutlined, SettingOutlined, CheckOutlined, UserOutlined, ImportOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 function HeaderNav() {
@@ -111,24 +111,40 @@ function HeaderNav() {
   );
   return (
     <div className={styles.header}>
-      {/* 设置 */}
-      <div className={styles.setting} onClick={() => setVisible(true)}>
-        <SettingOutlined />
+      {/* 面包屑导航 */}
+      <Breadcrumb>
+        {configStore.activeItem ? (
+          <>
+            <Breadcrumb.Item onClick={configStore.crumbItem}>
+              <Link to="/">{t('home')}</Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>{configStore.activeItem}</Breadcrumb.Item>
+          </>
+        ) : (
+          ''
+        )}
+      </Breadcrumb>
+
+      <div className={styles['header_right']}>
+        {/* 用户信息  */}
+        <Dropdown overlay={userMenu} placement="bottomRight">
+          <div className={styles.user}>
+            <UserOutlined /> admin
+          </div>
+        </Dropdown>
+
+        {/* 国际化 */}
+        <Dropdown overlay={languageMenu} placement="bottomRight">
+          <div className={styles.locales}>
+            <GlobalOutlined />
+          </div>
+        </Dropdown>
+
+        {/* 设置 */}
+        <div className={styles.setting} onClick={() => setVisible(true)}>
+          <SettingOutlined />
+        </div>
       </div>
-
-      {/* 国际化 */}
-      <Dropdown overlay={languageMenu} placement="bottomRight">
-        <div className={styles.locales}>
-          <GlobalOutlined />
-        </div>
-      </Dropdown>
-
-      {/* 用户信息  */}
-      <Dropdown overlay={userMenu} placement="bottomRight">
-        <div className={styles.user}>
-          <UserOutlined /> admin
-        </div>
-      </Dropdown>
 
       {/* 设置面板 */}
       <Drawer width="280" className={styles.setting_drawer} placement="right" visible={visible} onClose={() => setVisible(false)} closable={false}>

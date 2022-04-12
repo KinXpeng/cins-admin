@@ -1,6 +1,7 @@
 const zh_CN = {
   notfound: '访问的页面不存在',
   back_home: '返回首页',
+  home: '首页',
   header: {
     page_style: '整体风格设置',
     theme_color: '主题色',

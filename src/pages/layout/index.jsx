@@ -22,7 +22,7 @@ function LayoutConfig() {
         <SiderMenu collapsed={collapsed} />
       </Sider>
       <Layout className={styles['site-layout']}>
-        <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0 }}>
+        <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0, alignItems: 'center' }}>
           {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: styles['trigger'],
             onClick: toggle,
