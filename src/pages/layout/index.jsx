@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
@@ -11,10 +11,19 @@ const { Header, Content, Sider } = Layout;
 
 function LayoutConfig() {
   const { configStore } = useStore();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(false); // 菜单栏收起状态
+  const [width, setWidth] = useState(window.innerWidth); // 窗口宽度
   const toggle = () => {
     setCollapsed(!collapsed);
   };
+
+  // 获取窗口宽度
+  window.onresize = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    width < 650 ? setCollapsed(true) : setCollapsed(false);
+  }, [width]);
 
   return (
     <Layout className={styles.layout}>
@@ -25,7 +34,7 @@ function LayoutConfig() {
         <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0, alignItems: 'center' }}>
           {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: styles['trigger'],
-            onClick: toggle,
+            onClick: window.innerWidth > 500 ? toggle : null,
           })}
           <HeaderNav />
         </Header>

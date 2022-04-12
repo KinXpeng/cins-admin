@@ -116,7 +116,7 @@ function HeaderNav() {
     <div className={styles.header}>
       {/* 面包屑导航 */}
       <Breadcrumb>
-        {configStore.activeItem ? (
+        {configStore.activeItem && window.innerWidth > 500 ? (
           <>
             <Breadcrumb.Item onClick={configStore.crumbItem}>
               <Link to="/">{t('home')}</Link>
