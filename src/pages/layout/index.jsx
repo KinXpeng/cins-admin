@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
@@ -37,7 +37,9 @@ function LayoutConfig() {
             minHeight: 280,
           }}
         >
-          <Outlet />
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </Content>
       </Layout>
     </Layout>
