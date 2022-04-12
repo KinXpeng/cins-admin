@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Form, Input, Button, Checkbox, message, Spin } from 'antd';
+import { Form, Input, Button, Checkbox, Spin } from 'antd'; // message
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
