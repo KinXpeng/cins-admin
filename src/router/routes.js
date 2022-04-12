@@ -12,8 +12,23 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'test',
-        component: lazy(() => import('@/pages/test/index')),
+        name: 'home',
+        component: lazy(() => import('@/pages/home/index')),
+      },
+      {
+        path: '/userList', // 用户列表
+        name: 'userList',
+        component: lazy(() => import('@/pages/userList/index')),
+      },
+      {
+        path: '/diaryList', // 日记列表
+        name: 'diaryList',
+        component: lazy(() => import('@/pages/diaryList/index')),
+      },
+      {
+        path: '/momentStatus', // 状态
+        name: 'momentStatus',
+        component: lazy(() => import('@/pages/momentStatus/index')),
       },
     ],
   },
