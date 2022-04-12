@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import { Menu } from 'antd';
@@ -12,6 +12,14 @@ const { SubMenu } = Menu;
 function SiderMenu({ collapsed }) {
   const { configStore } = useStore();
   const { t } = useTranslation();
+
+  // 解决刷新页面面包屑导航消失的问题
+  useEffect(() => {
+    let key = localStorage.getItem('activeItem');
+    if (key !== undefined) {
+      configStore.switchMenuItem({ key: key });
+    }
+  }, [configStore]);
   return (
     <>
       <div className={styles.logo}>{collapsed ? 'L' : 'logo'}</div>

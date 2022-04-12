@@ -10,21 +10,24 @@ import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 function HeaderNav() {
   const { configStore, loginStore } = useStore();
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { t } = useTranslation(); // 国际化
+  const navigate = useNavigate(); // 路由跳转
   const [locales, setLocales] = useState(['zh_CN']); // 默认中文环境
   const [visible, setVisible] = useState(false); // 设置面板显示状态
+
   useEffect(() => {
     if (localStorage.getItem('locale')) {
       setLocales([localStorage.getItem('locale')]);
     }
   }, []);
+
   const handleSelect = ({ key }) => {
     if (locales[0] !== key) {
       setLocales([key]);
       configStore.switchLanguage(key);
     }
   };
+
   // 主题风格
   const themeList = [
     {
