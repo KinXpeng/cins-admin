@@ -14,9 +14,9 @@ function Login() {
   const [loading, setLoading] = useState(false);
   // 登录
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+    // console.log('Received values of form: ', values);
     loginStore.login();
-    message.success(t('login.success'));
+    // message.success(t('login.success'));
     setLoading(true);
     setTimeout(() => {
       navigate('/', { replace: true });

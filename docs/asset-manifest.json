@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.edc406e2.css",
+    "main.js": "/static/js/main.cc63a3aa.js",
+    "static/css/244.f4e2dc06.chunk.css": "/static/css/244.f4e2dc06.chunk.css",
+    "static/js/244.247b53fe.chunk.js": "/static/js/244.247b53fe.chunk.js",
+    "static/css/865.3e3daf85.chunk.css": "/static/css/865.3e3daf85.chunk.css",
+    "static/js/865.e3606717.chunk.js": "/static/js/865.e3606717.chunk.js",
+    "static/js/749.01a80b91.chunk.js": "/static/js/749.01a80b91.chunk.js",
+    "static/js/629.35788c9d.chunk.js": "/static/js/629.35788c9d.chunk.js",
+    "static/js/2.edca14c0.chunk.js": "/static/js/2.edca14c0.chunk.js",
+    "static/js/803.a024352c.chunk.js": "/static/js/803.a024352c.chunk.js",
+    "static/js/666.95cc70e4.chunk.js": "/static/js/666.95cc70e4.chunk.js",
+    "static/js/40.5a209fce.chunk.js": "/static/js/40.5a209fce.chunk.js",
+    "static/media/dark.svg": "/static/media/dark.0fe93e5b4e03ab3cbf2473fcc54be41f.svg",
+    "static/media/light.svg": "/static/media/light.7f08f7e4b20a0da51bdcd6a3f1306bef.svg",
+    "index.html": "/index.html",
+    "main.edc406e2.css.map": "/static/css/main.edc406e2.css.map",
+    "main.cc63a3aa.js.map": "/static/js/main.cc63a3aa.js.map",
+    "244.f4e2dc06.chunk.css.map": "/static/css/244.f4e2dc06.chunk.css.map",
+    "244.247b53fe.chunk.js.map": "/static/js/244.247b53fe.chunk.js.map",
+    "865.3e3daf85.chunk.css.map": "/static/css/865.3e3daf85.chunk.css.map",
+    "865.e3606717.chunk.js.map": "/static/js/865.e3606717.chunk.js.map",
+    "749.01a80b91.chunk.js.map": "/static/js/749.01a80b91.chunk.js.map",
+    "629.35788c9d.chunk.js.map": "/static/js/629.35788c9d.chunk.js.map",
+    "2.edca14c0.chunk.js.map": "/static/js/2.edca14c0.chunk.js.map",
+    "803.a024352c.chunk.js.map": "/static/js/803.a024352c.chunk.js.map",
+    "666.95cc70e4.chunk.js.map": "/static/js/666.95cc70e4.chunk.js.map",
+    "40.5a209fce.chunk.js.map": "/static/js/40.5a209fce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edc406e2.css",
+    "static/js/main.cc63a3aa.js"
+  ]
+}
