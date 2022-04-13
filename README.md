@@ -5,6 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Project introduction
 
 - 项目是基于 `create-react-app` 脚手架搭建的后台管理系统（react18版本），所有页面及功能采用函数式组件及hooks实现。
+
+- 项目预览：https://admin.cins.cc （账号、密码任意）
+
 - 所用技术/UI框架
   - 脚手架：`create-react-app`
   - React Hooks
@@ -14,8 +17,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - UI框架：`antd`
   - 配置别名（配置@路径简化路径处理）：`@craco/craco`
   - 国际化：`i18next` `react-i18next`
-  - Ajax数据请求：`axios`
+  - Ajax数据请求：`axios` （暂无依赖及配置）
+  
 - 功能实现：（界面设计参照了antd-pro的风格）
+  
+  - 界面适配：支持PC端和==移动端==的响应式布局。
+  
   - 界面风格切换：暗色风格和亮色风格两种。
   - 主题色切换：antd-pro的8种主题色。
   - 国际化：使用 `i18n` 实现国际化，当前支持中英文两种语言的切换。
