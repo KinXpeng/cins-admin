@@ -32,10 +32,12 @@ function LayoutConfig() {
       </Sider>
       <Layout className={styles['site-layout']}>
         <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0, alignItems: 'center' }}>
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: styles['trigger'],
-            onClick: window.innerWidth > 500 ? toggle : null,
-          })}
+          {width > 500
+            ? React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                className: styles['trigger'],
+                onClick: toggle,
+              })
+            : ''}
           <HeaderNav />
         </Header>
         <Content

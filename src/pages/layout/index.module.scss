@@ -4,8 +4,11 @@
 
   // 侧边收缩按钮
   .trigger {
+    display: flex;
+    align-items: center;
     padding: 0 24px;
     font-size: 18px;
+    height: 100%;
     cursor: pointer;
     transition: color 0.3s;
     color: rgba(0, 0, 0, 0.65);
