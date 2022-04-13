@@ -38,7 +38,9 @@
     // menu
     :global(.ant-menu) {
       height: calc(100% - 64px);
-      box-shadow: 2px 2px 4px 0 rgb(0 35 41 / 8%);
+    }
+    :global(.ant-menu-root) {
+      box-shadow: 2px 4px 4px 0 rgb(0 35 41 / 8%);
     }
 
     :global(.ant-menu-inline),
