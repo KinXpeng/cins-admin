@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "./static/css/main.edc406e2.css",
-    "main.js": "./static/js/main.086f13ee.js",
+    "main.js": "./static/js/main.671da540.js",
     "static/css/244.f4e2dc06.chunk.css": "./static/css/244.f4e2dc06.chunk.css",
     "static/js/244.247b53fe.chunk.js": "./static/js/244.247b53fe.chunk.js",
-    "static/css/865.572e0a23.chunk.css": "./static/css/865.572e0a23.chunk.css",
-    "static/js/865.eceaeeba.chunk.js": "./static/js/865.eceaeeba.chunk.js",
+    "static/css/865.479a6872.chunk.css": "./static/css/865.479a6872.chunk.css",
+    "static/js/865.387b3182.chunk.js": "./static/js/865.387b3182.chunk.js",
     "static/js/410.21c1e334.chunk.js": "./static/js/410.21c1e334.chunk.js",
     "static/js/612.f71366be.chunk.js": "./static/js/612.f71366be.chunk.js",
     "static/js/703.80075fa3.chunk.js": "./static/js/703.80075fa3.chunk.js",
@@ -19,11 +19,11 @@
     "static/media/light.svg": "./static/media/light.7f08f7e4b20a0da51bdcd6a3f1306bef.svg",
     "index.html": "./index.html",
     "main.edc406e2.css.map": "./static/css/main.edc406e2.css.map",
-    "main.086f13ee.js.map": "./static/js/main.086f13ee.js.map",
+    "main.671da540.js.map": "./static/js/main.671da540.js.map",
     "244.f4e2dc06.chunk.css.map": "./static/css/244.f4e2dc06.chunk.css.map",
     "244.247b53fe.chunk.js.map": "./static/js/244.247b53fe.chunk.js.map",
-    "865.572e0a23.chunk.css.map": "./static/css/865.572e0a23.chunk.css.map",
-    "865.eceaeeba.chunk.js.map": "./static/js/865.eceaeeba.chunk.js.map",
+    "865.479a6872.chunk.css.map": "./static/css/865.479a6872.chunk.css.map",
+    "865.387b3182.chunk.js.map": "./static/js/865.387b3182.chunk.js.map",
     "410.21c1e334.chunk.js.map": "./static/js/410.21c1e334.chunk.js.map",
     "612.f71366be.chunk.js.map": "./static/js/612.f71366be.chunk.js.map",
     "703.80075fa3.chunk.js.map": "./static/js/703.80075fa3.chunk.js.map",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.edc406e2.css",
-    "static/js/main.086f13ee.js"
+    "static/js/main.671da540.js"
   ]
 }
