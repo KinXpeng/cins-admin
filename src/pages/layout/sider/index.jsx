@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 
 const { SubMenu } = Menu;
 
-function SiderMenu({ collapsed }) {
+function SiderMenu({ collapsed, setVisible }) {
   const { configStore } = useStore();
   const { t } = useTranslation();
   const navigate = useNavigate(); // 路由跳转
@@ -27,12 +27,18 @@ function SiderMenu({ collapsed }) {
     configStore.crumbItem();
     navigate('/', { replace: true });
   };
+
+  // 选择菜单
+  const handleSelectItem = (item) => {
+    configStore.switchMenuItem(item);
+    if (setVisible !== undefined) setVisible(false); // 收起drawer菜单
+  };
   return (
     <>
       <div className={styles.logo} onClick={backHome}>
         {collapsed ? 'L' : 'logo'}
       </div>
-      <Menu theme={configStore.themeStyle} mode="inline" selectedKeys={[configStore.activeItem]} onClick={configStore.switchMenuItem}>
+      <Menu theme={configStore.themeStyle} mode="inline" selectedKeys={[configStore.activeItem]} onClick={handleSelectItem}>
         <SubMenu key="user" icon={<TeamOutlined />} title={t('aside.user_list')}>
           <Menu.Item key="Option 1">
             <Link to="/userList">Option 1</Link>
