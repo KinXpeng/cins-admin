@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
-import { Breadcrumb, Menu, Dropdown, Tooltip, Drawer } from 'antd';
-import { GlobalOutlined, SettingOutlined, CheckOutlined, UserOutlined, ImportOutlined } from '@ant-design/icons';
+import { Breadcrumb, Menu, Dropdown, Tooltip, Drawer, Avatar } from 'antd';
+import { GlobalOutlined, SettingOutlined, CheckOutlined, ImportOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, Link } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
+import user from '@/assets/imgs/user.jpeg';
 function HeaderNav() {
   const { configStore, loginStore } = useStore();
   const { t } = useTranslation(); // 国际化
@@ -132,7 +133,7 @@ function HeaderNav() {
         {/* 用户信息  */}
         <Dropdown overlay={userMenu} placement="bottomRight">
           <div className={styles.user}>
-            <UserOutlined /> admin
+            <Avatar src={user} />
           </div>
         </Dropdown>
 

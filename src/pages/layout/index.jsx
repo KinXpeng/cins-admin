@@ -16,7 +16,7 @@ function LayoutConfig() {
   const [visible, setVisible] = useState(false); // Drawer状态
   const [width, setWidth] = useState(window.innerWidth); // 窗口宽度
   const toggle = () => {
-    setCollapsed(!collapsed);
+    if (width > 650) setCollapsed(!collapsed);
     setVisible(true);
   };
 
