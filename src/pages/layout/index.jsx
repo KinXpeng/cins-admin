@@ -66,7 +66,7 @@ function LayoutConfig() {
             className: styles['trigger'],
             onClick: toggle,
           })}
-          <HeaderNav />
+          <HeaderNav width={width} />
         </Header>
         <Content
           className={styles['site-layout-background']}

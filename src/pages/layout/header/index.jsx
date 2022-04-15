@@ -9,7 +9,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 import user from '@/assets/imgs/user.jpeg';
-function HeaderNav() {
+function HeaderNav({ width }) {
   const { configStore, loginStore } = useStore();
   const { t } = useTranslation(); // 国际化
   const navigate = useNavigate(); // 路由跳转
@@ -117,7 +117,7 @@ function HeaderNav() {
     <div className={styles.header}>
       {/* 面包屑导航 */}
       <Breadcrumb>
-        {configStore.activeItem && window.innerWidth > 500 ? (
+        {configStore.activeItem && width > 500 ? (
           <>
             <Breadcrumb.Item onClick={configStore.crumbItem}>
               <Link to="/">{t('home')}</Link>
