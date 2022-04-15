@@ -22,6 +22,7 @@ function HeaderNav({ width }) {
     }
   }, []);
 
+  // 语言切换
   const handleSelect = ({ key }) => {
     if (locales[0] !== key) {
       setLocales([key]);

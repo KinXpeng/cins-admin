@@ -3,7 +3,7 @@ import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import { Menu } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { TeamOutlined, TableOutlined, SmileOutlined } from '@ant-design/icons';
 import styles from './index.module.scss';
 
@@ -13,14 +13,15 @@ function SiderMenu({ collapsed, setVisible }) {
   const { configStore } = useStore();
   const { t } = useTranslation();
   const navigate = useNavigate(); // 路由跳转
+  const location = useLocation();
 
   // 解决刷新页面面包屑导航消失的问题
   useEffect(() => {
     let key = localStorage.getItem('activeItem');
-    if (key !== undefined && key !== null) {
+    if (key !== undefined && key !== null && location.pathname !== '/') {
       configStore.switchMenuItem({ key: key });
     }
-  }, [configStore]);
+  }, [configStore, location.pathname]);
 
   // 返回首页
   const backHome = () => {
