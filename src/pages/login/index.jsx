@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 function Login() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { loginStore } = useStore();
+  const { loginStore, configStore } = useStore();
   const [loading, setLoading] = useState(false);
   // 登录
   const onFinish = (values) => {
@@ -20,6 +20,7 @@ function Login() {
     setLoading(true);
     setTimeout(() => {
       navigate('/', { replace: true });
+      configStore.crumbItem();
       setLoading(false);
     }, 1000);
   };

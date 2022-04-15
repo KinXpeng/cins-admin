@@ -50,6 +50,7 @@ function SiderMenu({ collapsed, setVisible }) {
       ],
     },
   ]);
+
   // 解决刷新页面面包屑导航消失的问题
   useEffect(() => {
     let key = localStorage.getItem('activeItem');
@@ -90,21 +91,6 @@ function SiderMenu({ collapsed, setVisible }) {
             ))}
           </SubMenu>
         ))}
-        {/* <SubMenu key="user" icon={<TeamOutlined />} title={t('aside.user_list')}>
-          <Menu.Item key="Option 1">
-            <Link to="/userList">Option 1</Link>
-          </Menu.Item>
-        </SubMenu>
-        <SubMenu key="diary" icon={<TableOutlined />} title={t('aside.diary_list')}>
-          <Menu.Item key="Option 2">
-            <Link to="/diaryList">Option 2</Link>
-          </Menu.Item>
-        </SubMenu>
-        <SubMenu key="moment" icon={<SmileOutlined />} title={t('aside.moment_status')}>
-          <Menu.Item key="Option 3">
-            <Link to="/momentStatus">Option 3</Link>
-          </Menu.Item>
-        </SubMenu> */}
       </Menu>
     </>
   );
