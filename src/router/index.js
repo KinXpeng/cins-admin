@@ -1,12 +1,13 @@
 import { Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import routes from './routes';
+import Loading from '@/components/loading';
 import Auth from '@/components/auth';
 import NotFound from '@/pages/404';
 function RouterConfig() {
   return (
     <Router>
-      <Suspense fallback={<>loading ...</>}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           {routes?.map((item) => (
             <Route
