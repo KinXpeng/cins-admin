@@ -20,11 +20,18 @@ const routes = [
         name: 'userList',
         component: lazy(() => import('@/pages/userList/index')),
       },
+
       {
         path: '/diaryList', // 日记列表
         name: 'diaryList',
-        component: lazy(() => import('@/pages/diaryList/index')),
+        component: lazy(() => import('@/pages/diaryList/homePage')),
       },
+      {
+        path: '/journeyTake', // 日记列表 JourneyTake
+        name: 'journeyTake',
+        component: lazy(() => import('@/pages/diaryList/journeyTake')),
+      },
+
       {
         path: '/momentStatus', // 状态
         name: 'momentStatus',

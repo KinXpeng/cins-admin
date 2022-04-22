@@ -36,6 +36,10 @@ function SiderMenu({ collapsed, setVisible }) {
           path: '/diaryList',
           key: 'Option 2',
         },
+        {
+          path: '/journeyTake',
+          key: 'Option 3',
+        },
       ],
     },
     {
@@ -45,7 +49,7 @@ function SiderMenu({ collapsed, setVisible }) {
       children: [
         {
           path: '/momentStatus',
-          key: 'Option 3',
+          key: 'Option 4',
         },
       ],
     },
