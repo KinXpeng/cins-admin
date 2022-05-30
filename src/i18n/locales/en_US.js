@@ -7,9 +7,19 @@ const en_US = {
     theme_color: 'Theme Color',
   },
   aside: {
-    user_list: 'User List',
-    diary_list: 'Diary List',
-    moment_status: 'Moment Status',
+    user: {
+      nav: 'User Manage',
+      user_list: 'User List',
+    },
+    diary: {
+      nav: 'Diary Manage',
+      diary_list: 'Diary List',
+      journey_take: 'Journey Take',
+    },
+    moment: {
+      nav: 'Moment Status',
+      moment_status: 'My Moment',
+    },
   },
   login: {
     remember: 'Remember me',

@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/612.f71366be.chunk.js","mappings":"iIAQA,UARA,WACE,OACE,0BACE","sources":["pages/userList/index.jsx"],"sourcesContent":["function UserList() {\n  return (\n    <div>\n      <p>用户测试页面</p>\n    </div>\n  );\n}\n\nexport default UserList;\n"],"names":[],"sourceRoot":""}

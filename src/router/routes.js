@@ -18,18 +18,18 @@ const routes = [
       {
         path: '/userList', // 用户列表
         name: 'userList',
-        component: lazy(() => import('@/pages/userList/index')),
+        component: lazy(() => import('@/pages/userManage/userList/index')),
       },
 
       {
         path: '/diaryList', // 日记列表
         name: 'diaryList',
-        component: lazy(() => import('@/pages/diaryList/homePage')),
+        component: lazy(() => import('@/pages/diaryManage/homePage')),
       },
       {
         path: '/journeyTake', // 日记列表 JourneyTake
         name: 'journeyTake',
-        component: lazy(() => import('@/pages/diaryList/journeyTake')),
+        component: lazy(() => import('@/pages/diaryManage/journeyTake')),
       },
 
       {

@@ -27,6 +27,7 @@ function HeaderNav({ width }) {
     if (locales[0] !== key) {
       setLocales([key]);
       configStore.switchLanguage(key);
+      window.location.reload();
     }
   };
 

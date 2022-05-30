@@ -19,37 +19,37 @@ function SiderMenu({ collapsed, setVisible }) {
     {
       key: 'user',
       icon: <TeamOutlined />,
-      title: t('aside.user_list'),
+      title: t('aside.user.nav'),
       children: [
         {
           path: '/userList',
-          key: 'Option 1',
+          key: t('aside.user.user_list'),
         },
       ],
     },
     {
       key: 'diary',
       icon: <TableOutlined />,
-      title: t('aside.diary_list'),
+      title: t('aside.diary.nav'),
       children: [
         {
           path: '/diaryList',
-          key: 'Option 2',
+          key: t('aside.diary.diary_list'),
         },
         {
           path: '/journeyTake',
-          key: 'Option 3',
+          key: t('aside.diary.journey_take'),
         },
       ],
     },
     {
       key: 'moment',
       icon: <SmileOutlined />,
-      title: t('aside.moment_status'),
+      title: t('aside.moment.nav'),
       children: [
         {
           path: '/momentStatus',
-          key: 'Option 4',
+          key: t('aside.moment.moment_status'),
         },
       ],
     },

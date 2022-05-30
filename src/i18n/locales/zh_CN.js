@@ -7,9 +7,19 @@ const zh_CN = {
     theme_color: '主题色',
   },
   aside: {
-    user_list: '用户列表',
-    diary_list: '日记列表',
-    moment_status: '时刻状态',
+    user: {
+      nav: '用户管理',
+      user_list: '用户列表',
+    },
+    diary: {
+      nav: '日记管理',
+      diary_list: '日记列表',
+      journey_take: '旅拍',
+    },
+    moment: {
+      nav: '时刻状态',
+      moment_status: '我的状态',
+    },
   },
   login: {
     remember: '记住密码',
