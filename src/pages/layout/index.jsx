@@ -57,7 +57,7 @@ function LayoutConfig() {
         <Header className={styles['site-layout-background']} style={{ display: 'flex', padding: 0, alignItems: 'center' }}>
           {width < 650 ? (
             <span className={styles['header_logo']} onClick={backHome}>
-              L
+              C
             </span>
           ) : (
             ''

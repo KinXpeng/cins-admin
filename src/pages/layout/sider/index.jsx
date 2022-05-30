@@ -83,7 +83,7 @@ function SiderMenu({ collapsed, setVisible }) {
   return (
     <>
       <div className={styles.logo} onClick={backHome}>
-        {collapsed ? 'L' : 'logo'}
+        {collapsed ? 'C' : 'CINS'}
       </div>
       <Menu theme={configStore.themeStyle} mode="inline" selectedKeys={[configStore.activeItem]} onClick={handleSelectItem}>
         {menuList.map((item) => (
