@@ -23,7 +23,8 @@ function SiderMenu({ collapsed, setVisible }) {
       children: [
         {
           path: '/userList',
-          key: t('aside.user.user_list'),
+          key: 'userList',
+          title: t('aside.user.user_list'),
         },
       ],
     },
@@ -34,11 +35,13 @@ function SiderMenu({ collapsed, setVisible }) {
       children: [
         {
           path: '/diaryList',
-          key: t('aside.diary.diary_list'),
+          key: 'diaryList',
+          title: t('aside.diary.diary_list'),
         },
         {
           path: '/journeyTake',
-          key: t('aside.diary.journey_take'),
+          key: 'journeyTake',
+          title: t('aside.diary.journey_take'),
         },
       ],
     },
@@ -49,7 +52,8 @@ function SiderMenu({ collapsed, setVisible }) {
       children: [
         {
           path: '/momentStatus',
-          key: t('aside.moment.moment_status'),
+          key: 'momentStatus',
+          title: t('aside.moment.moment_status'),
         },
       ],
     },
@@ -57,15 +61,15 @@ function SiderMenu({ collapsed, setVisible }) {
 
   // 解决刷新页面面包屑导航消失的问题
   useEffect(() => {
-    let key = localStorage.getItem('activeItem');
+    let activeNode = JSON.parse(localStorage.getItem('activeItem'));
     menuList.forEach((ele) => {
       let result = ele.children.find((item) => item.path === location.pathname);
       if (result) {
-        key = result.key;
+        activeNode = result;
       }
     });
-    if (key !== undefined && key !== null && location.pathname !== '/') {
-      configStore.switchMenuItem({ key: key });
+    if (activeNode?.title !== undefined && activeNode?.title !== null && location.pathname !== '/') {
+      configStore.switchMenuItem(activeNode);
     }
   }, [configStore, location.pathname, menuList]);
 
@@ -75,22 +79,27 @@ function SiderMenu({ collapsed, setVisible }) {
     navigate('/', { replace: true });
   };
 
-  // 选择菜单
-  const handleSelectItem = (item) => {
-    configStore.switchMenuItem(item);
+  // 点击菜单
+  const handleClickItem = (item) => {
+    let parentNode = item.keyPath[1];
+    let result = menuList.find((item) => item.key == parentNode);
+    let activeNode = result.children.find((item) => item.path == item.path);
+    configStore.switchMenuItem(activeNode);
     if (setVisible !== undefined) setVisible(false); // 收起drawer菜单
+    console.log(configStore.activeItem.key);
   };
+
   return (
     <>
       <div className={styles.logo} onClick={backHome}>
         {collapsed ? 'C' : 'CINS'}
       </div>
-      <Menu theme={configStore.themeStyle} mode="inline" selectedKeys={[configStore.activeItem]} onClick={handleSelectItem}>
+      <Menu theme={configStore.themeStyle} mode="inline" selectedKeys={[configStore.activeItem.key]} onClick={handleClickItem}>
         {menuList.map((item) => (
           <SubMenu key={item.key} icon={item.icon} title={item.title}>
             {item.children.map((item1) => (
               <Menu.Item key={item1.key}>
-                <Link to={item1.path}>{item1.key}</Link>
+                <Link to={item1.path}>{item1.title}</Link>
               </Menu.Item>
             ))}
           </SubMenu>

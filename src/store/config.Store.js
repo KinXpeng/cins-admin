@@ -19,8 +19,8 @@ class ConfigStore {
 
   // 菜单切换
   switchMenuItem = (item) => {
-    this.activeItem = item.key;
-    localStorage.setItem('activeItem', item.key);
+    this.activeItem = item;
+    localStorage.setItem('activeItem', JSON.stringify(item));
   };
 
   // 点击面包屑导航首页

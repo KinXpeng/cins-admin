@@ -119,12 +119,12 @@ function HeaderNav({ width }) {
     <div className={styles.header}>
       {/* 面包屑导航 */}
       <Breadcrumb>
-        {configStore.activeItem && width > 500 ? (
+        {configStore.activeItem?.title && width > 500 ? (
           <>
             <Breadcrumb.Item onClick={configStore.crumbItem}>
               <Link to="/">{t('home')}</Link>
             </Breadcrumb.Item>
-            <Breadcrumb.Item>{configStore.activeItem}</Breadcrumb.Item>
+            <Breadcrumb.Item>{configStore.activeItem.title}</Breadcrumb.Item>
           </>
         ) : (
           ''
