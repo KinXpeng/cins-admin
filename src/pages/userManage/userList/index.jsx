@@ -75,8 +75,11 @@ function UserList() {
     },
   ];
 
+  const styles = {
+    overflowX: 'auto',
+  };
   return (
-    <div>
+    <div style={styles}>
       <Table columns={columns} dataSource={data} bordered />
     </div>
   );

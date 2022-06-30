@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 import { Breadcrumb, Menu, Dropdown, Tooltip, Drawer, Avatar } from 'antd';
 import { GlobalOutlined, SettingOutlined, CheckOutlined, ImportOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
 import light from '@/assets/icons/light.svg';
 import user from '@/assets/imgs/user.jpeg';
@@ -121,9 +121,7 @@ function HeaderNav({ width }) {
       <Breadcrumb>
         {configStore.activeItem?.title && width > 500 ? (
           <>
-            <Breadcrumb.Item onClick={configStore.crumbItem}>
-              <Link to="/">{t('home')}</Link>
-            </Breadcrumb.Item>
+            <Breadcrumb.Item>{configStore.parentItem.title}</Breadcrumb.Item>
             <Breadcrumb.Item>{configStore.activeItem.title}</Breadcrumb.Item>
           </>
         ) : (

@@ -62,6 +62,8 @@ function SiderMenu({ collapsed, setVisible }) {
   // 解决刷新页面面包屑导航消失的问题
   useEffect(() => {
     let activeNode = JSON.parse(localStorage.getItem('activeItem'));
+    let parentNode = JSON.parse(localStorage.getItem('parentItem'));
+    if (parentNode) parentNode = menuList.find((item) => item.key === parentNode.key);
     menuList.forEach((ele) => {
       let result = ele.children.find((item) => item.path === location.pathname);
       if (result) {
@@ -70,6 +72,7 @@ function SiderMenu({ collapsed, setVisible }) {
     });
     if (activeNode?.title !== undefined && activeNode?.title !== null && location.pathname !== '/') {
       configStore.switchMenuItem(activeNode);
+      configStore.operateCrumbMenu(parentNode);
     }
   }, [configStore, location.pathname, menuList]);
 
@@ -82,11 +85,11 @@ function SiderMenu({ collapsed, setVisible }) {
   // 点击菜单
   const handleClickItem = (item) => {
     let parentNode = item.keyPath[1];
-    let result = menuList.find((item) => item.key == parentNode);
-    let activeNode = result.children.find((item) => item.path == item.path);
+    let result = menuList.find((ele) => ele.key === parentNode);
+    let activeNode = result.children.find((ele) => ele.key === item.key);
+    configStore.operateCrumbMenu(result);
     configStore.switchMenuItem(activeNode);
     if (setVisible !== undefined) setVisible(false); // 收起drawer菜单
-    console.log(configStore.activeItem.key);
   };
 
   return (

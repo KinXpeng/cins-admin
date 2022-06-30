@@ -71,8 +71,8 @@ function LayoutConfig() {
         <Content
           className={styles['site-layout-background']}
           style={{
-            margin: '10px',
-            padding: 24,
+            margin: width < 650 ? 4 : 10,
+            padding: width < 650 ? 10 : 24,
             minHeight: 280,
           }}
         >
