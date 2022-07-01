@@ -4,7 +4,7 @@ import { observer } from 'mobx-react-lite';
 import { Menu } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { TeamOutlined, TableOutlined, SmileOutlined } from '@ant-design/icons';
+import { PicRightOutlined, TableOutlined, SmileOutlined } from '@ant-design/icons';
 import styles from './index.module.scss';
 
 const { SubMenu } = Menu;
@@ -17,14 +17,19 @@ function SiderMenu({ collapsed, setVisible }) {
   const [menuList] = useState([
     // 菜单列表
     {
-      key: 'user',
-      icon: <TeamOutlined />,
-      title: t('aside.user.nav'),
+      key: 'manage',
+      icon: <PicRightOutlined />,
+      title: t('aside.manage.nav'),
       children: [
+        {
+          path: '/analysisPanel',
+          key: 'analysisPanel',
+          title: t('aside.manage.analysis_panel'),
+        },
         {
           path: '/userList',
           key: 'userList',
-          title: t('aside.user.user_list'),
+          title: t('aside.manage.user_list'),
         },
       ],
     },

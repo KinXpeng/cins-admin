@@ -1,4 +1,7 @@
 import { lazy } from 'react';
+import { manage } from './childRoutes/manage'; // 面板管理
+import { diary } from './childRoutes/diary'; // 日记管理
+import { moment } from './childRoutes/moment'; // 我的状态
 const routes = [
   {
     path: '/login',
@@ -15,28 +18,9 @@ const routes = [
         name: 'home',
         component: lazy(() => import('@/pages/home/index')),
       },
-      {
-        path: '/userList', // 用户列表
-        name: 'userList',
-        component: lazy(() => import('@/pages/userManage/userList/index')),
-      },
-
-      {
-        path: '/diaryList', // 日记列表
-        name: 'diaryList',
-        component: lazy(() => import('@/pages/diaryManage/homePage')),
-      },
-      {
-        path: '/journeyTake', // 日记列表 JourneyTake
-        name: 'journeyTake',
-        component: lazy(() => import('@/pages/diaryManage/journeyTake')),
-      },
-
-      {
-        path: '/momentStatus', // 状态
-        name: 'momentStatus',
-        component: lazy(() => import('@/pages/momentStatus/index')),
-      },
+      ...manage,
+      ...diary,
+      ...moment,
     ],
   },
 ];

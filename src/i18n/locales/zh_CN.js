@@ -7,8 +7,9 @@ const zh_CN = {
     theme_color: '主题色',
   },
   aside: {
-    user: {
-      nav: '用户管理',
+    manage: {
+      nav: '面板管理',
+      analysis_panel: '分析面板',
       user_list: '用户列表',
     },
     diary: {

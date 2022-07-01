@@ -1,11 +1,16 @@
-import loadingImg from '@/assets/imgs/loading.gif';
+import styles from './index.module.scss';
 function Loading() {
-  const loading = {
-    width: '100%',
-    height: '100%',
-    background: `url(${loadingImg}) center/cover`,
-  };
-  return <div style={loading}></div>;
+  return (
+    <div className={styles.loading}>
+      <div className={styles.loading_center}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  );
 }
 
 export default Loading;

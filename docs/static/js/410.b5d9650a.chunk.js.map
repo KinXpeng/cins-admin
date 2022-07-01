@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/410.b5d9650a.chunk.js","mappings":"yIASA,WAAeA,EAAAA,EAAAA,KARf,WACE,OACE,0BACE","sources":["pages/home/index.jsx"],"sourcesContent":["import { observer } from 'mobx-react-lite';\nfunction Home() {\n  return (\n    <div>\n      <p>测试主页</p>\n    </div>\n  );\n}\n\nexport default observer(Home);\n"],"names":["observer"],"sourceRoot":""}

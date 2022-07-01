@@ -7,8 +7,9 @@ const en_US = {
     theme_color: 'Theme Color',
   },
   aside: {
-    user: {
-      nav: 'User Manage',
+    manage: {
+      nav: 'Panel Manage',
+      analysis_panel: 'Analysis Panel',
       user_list: 'User List',
     },
     diary: {
