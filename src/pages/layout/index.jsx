@@ -72,8 +72,10 @@ function LayoutConfig() {
           className={styles['site-layout-background']}
           style={{
             margin: width < 650 ? 4 : 10,
-            padding: width < 650 ? 10 : 24,
+            padding: width < 650 ? 10 : 16,
             minHeight: 280,
+            overflow: 'hidden',
+            position: 'relative',
           }}
         >
           <Suspense>

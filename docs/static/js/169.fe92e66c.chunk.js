@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcins_admin=self.webpackChunkcins_admin||[]).push([[169],{169:function(n,i,c){c.r(i);var e=c(149),s=c(6417);i.default=(0,e.Pi)((function(){return(0,s.jsx)("div",{children:(0,s.jsx)("p",{children:"\u6d4b\u8bd5\u4e3b\u9875"})})}))}}]);
