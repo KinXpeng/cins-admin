@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcins_admin=self.webpackChunkcins_admin||[]).push([[97],{5097:function(n,e,i){i.r(e);var c=i(6417);e.default=function(){return(0,c.jsx)("div",{children:(0,c.jsx)("p",{children:"JourneyTake"})})}}}]);

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcins_admin=self.webpackChunkcins_admin||[]).push([[628],{9628:function(n,i,c){c.r(i);var e=c(184);i.default=function(){return(0,e.jsx)("div",{children:"\u5206\u6790\u9875\u9762"})}}}]);
+//# sourceMappingURL=628.282cfd40.chunk.js.map

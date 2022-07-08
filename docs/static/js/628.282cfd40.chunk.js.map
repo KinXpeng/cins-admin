@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/628.282cfd40.chunk.js","mappings":"iIAIA,UAJsB,WACpB,OAAO","sources":["pages/panelManage/analysisPanel/index.jsx"],"sourcesContent":["const AnalysisPanel = () => {\n  return <div>分析页面</div>;\n};\n\nexport default AnalysisPanel;\n"],"names":[],"sourceRoot":""}

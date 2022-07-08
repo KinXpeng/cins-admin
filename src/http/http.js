@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const instance = axios.create({
   // 固定请求地址
-  // baseURL:'/api', // (固定请求根据不同环境的配置已在main.js中设置，无需再次配置)
+  baseURL: '/api', // 可以改成你想要的地址
   // 请求超时时间
   timeout: 20000,
   // 当前请求默认请求头
