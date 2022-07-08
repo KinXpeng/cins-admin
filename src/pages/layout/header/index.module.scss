@@ -13,6 +13,7 @@
   // 语言切换
   .locales,
   .user,
+  .link_git,
   .setting {
     text-align: center;
     cursor: pointer;
@@ -29,6 +30,11 @@
   // 用户信息
   .user {
     width: 60px;
+  }
+
+  // link
+  .link_git {
+    width: 40px;
   }
 
   // 设置

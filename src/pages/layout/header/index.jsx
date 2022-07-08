@@ -3,7 +3,7 @@ import { useStore } from '@/store/index';
 import { observer } from 'mobx-react-lite';
 import styles from './index.module.scss';
 import { Breadcrumb, Menu, Dropdown, Tooltip, Drawer, Avatar } from 'antd';
-import { GlobalOutlined, SettingOutlined, CheckOutlined, ImportOutlined } from '@ant-design/icons';
+import { GlobalOutlined, SettingOutlined, CheckOutlined, ImportOutlined, GithubFilled } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import dark from '@/assets/icons/dark.svg';
@@ -99,6 +99,11 @@ function HeaderNav({ width }) {
     }
   };
 
+  // 跳转git
+  const handleLinkGit = () => {
+    window.open('https://github.com/KinXpeng/cins-admin');
+  };
+
   // 国际化菜单
   const languageMenu = (
     <Menu onClick={handleSelect} selectedKeys={locales}>
@@ -143,6 +148,11 @@ function HeaderNav({ width }) {
             <GlobalOutlined />
           </div>
         </Dropdown>
+
+        {/* github */}
+        <div className={styles.link_git} title="cins-admin" onClick={handleLinkGit}>
+          <GithubFilled />
+        </div>
 
         {/* 设置 */}
         <div className={styles.setting} onClick={() => setVisible(true)}>
