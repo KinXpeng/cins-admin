@@ -74,7 +74,7 @@ function LayoutConfig() {
             margin: width < 650 ? 4 : 10,
             padding: width < 650 ? 10 : 16,
             minHeight: 280,
-            overflow: 'hidden',
+            overflow: 'auto',
             position: 'relative',
           }}
         >
